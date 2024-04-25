@@ -1,0 +1,74 @@
+.perguntas {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+}
+
+.perguntas h2 {
+margin-bottom: 3.75rem;
+}
+
+.perguntas dl > div {
+    padding-top: 1.25rem;
+    border-radius: 0.25rem;
+}
+
+.perguntas dl > div:nth-child(odd) {  /*começa com itens ímpares*/
+    background-color: var(--cor-1);
+}
+
+.perguntas button {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;                  /*cursor do mouse vira uma mão*/
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+}
+.perguntas button::before {
+    content: "";
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.5rem;
+    background-color: var(--cor-p1);
+}
+
+.perguntas button::after {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.365rem;
+    background: url("../img/icones/seta-abrir.svg");
+    transition: 0.3s;
+}
+
+.perguntas button:hover::after,
+.perguntas button[aria-expanded="true"]::after {
+    transform: rotate(180deg);     /*faz a setinha mexer (animação)*/
+}
+
+.js .perguntas dd  {
+    display: none;
+}
+
+.js .perguntas dd.ativa {
+    display: block;
+}
+
+.perguntas dd {
+    padding-left: 1.25rem;
+    padding-top: 1rem;
+    max-width: 50ch;
+}
+
+@media (max-width: 50rem) {
+    .perguntas {
+        padding-top: 3.75rem;
+        padding-bottom: 3.75rem;
+    }
+    .perguntas h2 {
+        margin-bottom:  2.5rem;
+    }
+}
